@@ -1,0 +1,128 @@
+{
+  "prizes": [
+    500, 400, 350, 300, 250, 200, 180, 160, 140, 120, 100, 90, 80, 70, 60, 50,
+    40, 30, 20, 10
+  ],
+  "challenges": [
+    {
+      "date": "2021-07-02T18:00:00.000Z",
+      "badges": {
+        "main": "GCO2YMX3FF4ITMJFSBANPESOIN676GENIWIKRSGK7JBYIZ3H7H4UW25M"
+      },
+      "context": {
+        "title": "Create and fund a new account",
+        "paragraphs": [
+          "Use the testnet to create and fund your account <code>$PK_SHORT</code> (seen below)."
+        ],
+        "links": [
+          "https://laboratory.stellar.org/#account-creator?network=test"
+        ]
+      }
+    },
+    {
+      "date": "2021-07-08T18:53:00.000Z",
+      "badges": {
+        "main": "GAKS33OJD3AZDCLSMYKWPU2JKY7BZSBGVNLS4EN5ZPFXQCKZMK63WGSL"
+      },
+      "context": {
+        "title": "Create and fund a new account",
+        "paragraphs": [
+          "Use the testnet to create and fund your account <code>$PK_SHORT</code> (seen below)."
+        ],
+        "links": [
+          "https://laboratory.stellar.org/#account-creator?network=test"
+        ]
+      }
+    },
+    {
+      "date": "2021-07-12T00:00:00.000Z",
+      "badges": {
+        "main": "GAZ3UXIBGWS2T72TLU7HH7NZQE2RORFO4KAFPTJ55PHBOFPXJHQHPTDS"
+      },
+      "context": {
+        "title": "Create and fund a new account",
+        "paragraphs": [
+          "Use the testnet to create and fund your account <code>$PK_SHORT</code> (seen below)."
+        ],
+        "links": [
+          "https://laboratory.stellar.org/#account-creator?network=test"
+        ]
+      }
+    },
+    {
+      "date": "2021-07-16T15:00:00.000Z",
+      "badges": {
+        "main": "GBMLLI5EMUKUZO2APQYXZANTUET2D4QLG5N3ECEQZKQ62ET3MDZLKW5O"
+      },
+      "context": {
+        "title": "Create and fund a new account",
+        "paragraphs": [
+          "Use the testnet to create and fund your account <code>$PK_SHORT</code> (seen below)."
+        ],
+        "links": [
+          "https://laboratory.stellar.org/#account-creator?network=test"
+        ]
+      }
+    },
+    {
+      "date": "2021-07-19T23:00:00.000Z",
+      "badges": {
+        "main": "GC6XLPVFEVZO5SJ4PADO4KQVSITOHADJLR7RZEC4A3SYLA3FORKXRRHI"
+      },
+      "context": {
+        "title": "Create and fund a new account",
+        "paragraphs": [
+          "Use the testnet to create and fund your account <code>$PK_SHORT</code> (seen below)."
+        ],
+        "links": [
+          "https://laboratory.stellar.org/#account-creator?network=test"
+        ]
+      }
+    },
+    {
+      "date": "2021-07-26T20:00:00.000Z",
+      "badges": {
+        "main": "GAQRBLAAKJNMXVNZKBFCJ6E2XVXTXBUOXIAOQQNJBCUXBCZKR3HOLT2S"
+      },
+      "context": {
+        "title": "Create and fund a new account",
+        "paragraphs": [
+          "Use the testnet to create and fund your account <code>$PK_SHORT</code> (seen below)."
+        ],
+        "links": [
+          "https://laboratory.stellar.org/#account-creator?network=test"
+        ]
+      }
+    },
+    {
+      "date": "2021-07-28T19:00:00.000Z",
+      "badges": {
+        "main": "GAATGXGABT7HB7ALO3TAGVBVDE5B24LMSUQ3EKNCJHO5QBY4D5G5DZX5"
+      },
+      "context": {
+        "title": "Create and fund a new account",
+        "paragraphs": [
+          "Use the testnet to create and fund your account <code>$PK_SHORT</code> (seen below)."
+        ],
+        "links": [
+          "https://laboratory.stellar.org/#account-creator?network=test"
+        ]
+      }
+    },
+    {
+      "date": "2021-07-30T18:30:00.000Z",
+      "badges": {
+        "main": "GBZS5RP2YJDCF5RAJHXOHUXSBXD5KTDASIVSGETDYYI6OTPUS5ZFKIYA"
+      },
+      "context": {
+        "title": "Create and fund a new account",
+        "paragraphs": [
+          "Use the testnet to create and fund your account <code>$PK_SHORT</code> (seen below)."
+        ],
+        "links": [
+          "https://laboratory.stellar.org/#account-creator?network=test"
+        ]
+      }
+    }
+  ]
+}
