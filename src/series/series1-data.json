@@ -1,0 +1,158 @@
+{
+  "prizes": [],
+  "challenges": [
+    {
+      "date": "2020-10-12T13:00:00.000Z",
+      "badges": {
+        "main": "GBSTM6QKNYQND77XZR3CJN6Y5JALYGNLE5AL5CUB4OYPY2X6C62VPXOI",
+        "mono": "GAOVDKTAKB4VEDN4CUY6F3WP4Q2O3ME46XRVHO67M3645JMF5A4PH276"
+      },
+      "context": {
+        "title": "Create and fund a Stellar account",
+        "video": "pho-Kls7YmI",
+        "paragraphs": [
+          "In this challenge your task is to <strong>create and fund</strong> a brand new Stellar account <code>$PUK_SHORT</code> (seen below) <strong>with 1000 XLM</strong> on the testnet.",
+          "You will be required to use the <code>createAccount</code> operation, so don't just rely on friendbot. Good luck!"
+        ],
+        "links": [
+          "https://developers.stellar.org/docs/glossary/transactions",
+          "https://developers.stellar.org/docs/start/list-of-operations/#create-account",
+          "https://laboratory.stellar.org/#txbuilder?network=test",
+          "https://www.youtube.com/watch?v=pho-Kls7YmI"
+        ]
+      }
+    },
+    {
+      "date": "2020-10-17T01:00:00.000Z",
+      "badges": {
+        "main": "GBSUMPWCVF2YPVL6YRCI6EUWOC7MKGATUH2ZMRKXBWHEDW7A2IWBOQ7N",
+        "mono": "GCD5HRTHNH7OHURX6TVAHCN6UX42KPDM7E3QBBE5VJ3QGDRR34RTLZF6"
+      },
+      "context": {
+        "title": "Make a payment from your Stellar account",
+        "paragraphs": [
+          "In this challenge, your task is to <strong>make a 10 XLM payment</strong> from the Stellar account <code>$PUK_SHORT</code> (seen below) you funded in challenge 1.",
+          "Use the <code>payment</code> operation to send the XLM payment to any other testnet account."
+        ],
+        "links": [
+          "https://developers.stellar.org/docs/start/list-of-operations/#payment"
+        ]
+      }
+    },
+    {
+      "date": "2020-10-19T13:00:00.000Z",
+      "badges": {
+        "main": "GBIYXZVXEMPFBKIYLQF7A2TL54YALCIQKZKEIPKL6HJ3OYVF6HAAON7T",
+        "mono": "GCZ4O63TKVL6NIXSPU2BB63YQDADFC6LHAMO5W5ZDAIKAC7U5KJ4P7I4"
+      },
+      "context": {
+        "title": "Store some arbitrary data in your Stellar account",
+        "paragraphs": [
+          "Stellar allows you to store arbitrary data in the form of key : value pairs. In this challenge, you're tasked with adding a key of <strong>Hello</strong> and a value of <strong>World</strong> as a data attribute on your account. <code>$PUK_SHORT</code> (seen below).",
+          "Note this challenge is case sensitive, so ensure you've got your key and value properly capitalized before checking your answer."
+        ],
+        "links": [
+          "https://developers.stellar.org/docs/start/list-of-operations/#manage-data"
+        ]
+      }
+    },
+    {
+      "date": "2020-10-23T01:00:00.000Z",
+      "badges": {
+        "main": "GCATB7XLELFXGGMSO5W6ZWUMA27SQAV7KGR6QJCJ57E6WJPQIR2IJYNR",
+        "mono": "GDGHLVKR3T5BTP5OT535DIZV5BSTI7A3DW4X6AIKFUNSW4PROCKTGU22"
+      },
+      "context": {
+        "title": "Add multisig to your account and make use of it in a transaction",
+        "video": "hwRFyASpEXM",
+        "paragraphs": [
+          "In this challenge, your task is to <strong>add and then make use of multisig</strong> on your account <code>$PUK_SHORT</code> (seen below).",
+          "<i>⚠️</i>&nbsp;<strong>Please take your time with this one</strong>&nbsp;<i>⚠️</i><br>If you get it wrong you could lock yourself out of your account for the remainder of the series.<br>Nervous? <a href=\"https://discord.gg/8FhvuKb\" target=\"_blank\">Pop into our Discord</a> and verify before submitting.",
+          "Multisig can be a little tricky to wrap your mind around at first, but it's an important and essential security feature of Stellar baked into the core of the protocol.",
+          "*HINT: When adding multisig use <code>setOptions</code> but only set <code>Signer Type</code>. Do not touch <code>Master Weight</code> or any <code>Threshold</code> settings unless you're sure you know what you're doing."
+        ],
+        "links": [
+          "https://developers.stellar.org/docs/glossary/multisig/#additional-signing-keys",
+          "https://developers.stellar.org/docs/glossary/multisig",
+          "https://www.youtube.com/watch?v=hwRFyASpEXM"
+        ]
+      }
+    },
+    {
+      "date": "2020-10-26T13:00:00.000Z",
+      "badges": {
+        "main": "GA7WXO3ZUESRMKAY47CYABQZ4VX3DZE27M2JDDB5OUPNE3IU45WWLP3Z",
+        "mono": "GDGEEGGWWKYJUFOIBNNCQFMJO6F5X5OELQQZW35X4CL2WLKLZKV2DDDI"
+      },
+      "context": {
+        "title": "Create a custom asset and send it to your account",
+        "paragraphs": [
+          "In this challenge, your task is to <strong>create and send a custom asset</strong> to your account <code>$PUK_SHORT</code> (seen below).",
+          "Custom assets are a first-class citizen in Stellar, and while the concept of trustlines can be a little tricky, once you get it sorted it's quite intuitive and straightforward."
+        ],
+        "links": [
+          "https://developers.stellar.org/docs/issuing-assets",
+          "https://developers.stellar.org/docs/start/list-of-operations/#change-trust"
+        ]
+      }
+    },
+    {
+      "date": "2020-10-30T01:00:00.000Z",
+      "badges": {
+        "main": "GA7AUESLEP4NOFZDROK6WO5Y7A3QLLWFOYVWN7NA2JAAXXWHH7I4AQ74",
+        "mono": "GBW6YJIWHX5QFIKZZFMVNUQVIQAGPN3T5QYZTMBIATF5AXOAE4NRU4A6"
+      },
+      "context": {
+        "title": "Create an offer to sell your custom asset for XLM",
+        "paragraphs": [
+          "In this challenge, your task is to <strong>create an offer to sell your custom asset for XLM</strong>.",
+          "Stellar's decentralized exchange is a powerful feature that is built into the core of the protocol. It allows for instant interoperability between all Stellar assets, including yours!",
+          "<i>⚠️</i>&nbsp;<strong>The Stellar <a href=\"https://developers.stellar.org/docs/glossary/testnet/#periodic-reset-of-testnet-data\" target=\"_blank\">testnet was reset</a> this week</strong>&nbsp;<i>⚠️</i><br>You'll need to complete at least challenges 1 and 5 again before you'll be able to complete this challenge."
+        ],
+        "links": [
+          "https://developers.stellar.org/docs/glossary/decentralized-exchange",
+          "https://developers.stellar.org/docs/start/list-of-operations/#manage-sell-offer"
+        ],
+        "extra": "<a href=\"https://stellar.expert/explorer/testnet/account/$PUK?filter=offers&order=desc\" target=\"_blank\">View your offer on Stellar.Expert</a>"
+      }
+    },
+    {
+      "date": "2020-11-02T14:00:00.000Z",
+      "badges": {
+        "main": "GB5I564D7L2HZESHQ4QDWSXYZWAL3CH5Y625NN7HGYM77K6ABSBK6HQR",
+        "mono": "GBHFK7SK3MJH5RLDPGTJD7D3J3NZLGSBFRKWQRWB553JG7656PT3UFAQ"
+      },
+      "context": {
+        "title": "Make use of a channel account to make a payment",
+        "paragraphs": [
+          "In this challenge, your task is to submit a payment operation from your account <code>$PUK_SHORT</code> (seen below), but to <strong>use a separate source account</strong> to pay the fee and sequence number for the transaction.",
+          "This is known as a <em>fee channel</em> or a <em>channel account</em>. It's a great way to soak up fees for users in larger apps or achieve higher transaction throughput."
+        ],
+        "links": [
+          "https://developers.stellar.org/docs/glossary/channels",
+          "https://developers.stellar.org/docs/start/list-of-operations/#payment",
+          "https://medium.com/lumenauts/better-stellar-fee-channels-b02a27c11cda"
+        ]
+      }
+    },
+    {
+      "date": "2020-11-06T02:00:00.000Z",
+      "badges": {
+        "main": "GCGBARSEIHRZAL5JOMEPJRLXAVH5YBXIK2F6FA7J6PPREQSQERD5WRGT",
+        "mono": "GANVXPLCAVE5QPNXMK5WMTLYB7KUKHW4LG5BAQGI5EPB53RJ4EEG23HT"
+      },
+      "context": {
+        "title": "Acquire custom asset via a path payment",
+        "paragraphs": [
+          "In this challenge, your task is to acquire <code>SRT</code> from its issuing account <code>GCDNJUBQSX7AJWLJACMJ7I4BC3Z47BQUTMHEICZLE6MU4KQBRYG5JY6B</code> <strong>via a path payment</strong> operation.",
+          "By taking advantage of the decentralized exchange built in at the protocol level, a path payment combines the conversion and transfer of assets  It's one of Stellar's most powerful features."
+        ],
+        "links": [
+          "https://developers.stellar.org/docs/start/list-of-operations/#path-payment-strict-send",
+          "https://medium.com/stellar-community/understanding-stellar-path-payments-5eefe55b071b",
+          "https://youtu.be/KzlSgSPStz8"
+        ]
+      }
+    }
+  ]
+}

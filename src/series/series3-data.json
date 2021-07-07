@@ -1,0 +1,165 @@
+{
+  "prizes": [
+    500, 400, 350, 300, 250, 200, 180, 160, 140, 120, 100, 90, 80, 70, 60, 50,
+    40, 30, 20, 10
+  ],
+  "challenges": [
+    {
+      "date": "2021-05-03T13:00:00.000Z",
+      "badges": {
+        "main": "GCO2YMX3FF4ITMJFSBANPESOIN676GENIWIKRSGK7JBYIZ3H7H4UW25M"
+      },
+      "context": {
+        "title": "Make use of a sequence number bump operation in a transaction",
+        "paragraphs": [
+          "Welcome to Stellar Quest series 3! In today's inaugural challenge you must submit a transaction from your <code>$PK_SHORT</code> account, making use of the sequence number bump operation.",
+          "What good is the sequence number bump operation you ask? While it may not be a heavily utilized operation within an account's lifecycle it's an incredibly useful op when dealing with smart contracts, particularly around pre-signed transactions.",
+          "Imagine a scenario where you have two potential outcomes but only one of them should actually execute. Rather than having both transactions compete for the same sequence number you can control the outcome by bumping the sequence number to support whichever of the two scenarios you wish.",
+          "With functionality like this you can now block transaction submission both by time and by sequence. Control all the things!",
+          "⚠️ This quest isn't as simple at seems. We're just as much about coding as we are about gaming and riddles here at the SQ HQ. Be sure and click all the provided links and peruse for clues on how to conquer this quest."
+        ],
+        "links": [
+          "https://developers.stellar.org/docs/start/list-of-operations/#bump-sequence",
+          "https://laboratory.stellar.org/#txbuilder?network=test",
+          "https://horizon.stellar.org/transactions/073cde1fab7d28d3e322e5f61ac385c37859c3e82b17b6c92a9f0444420336cb"
+        ]
+      }
+    },
+    {
+      "date": "2021-05-07T01:00:00.000Z",
+      "badges": {
+        "main": "GAKS33OJD3AZDCLSMYKWPU2JKY7BZSBGVNLS4EN5ZPFXQCKZMK63WGSL"
+      },
+      "context": {
+        "title": "Submit a transaction containing 100 operations",
+        "paragraphs": [
+          "Stellar, like all good software, has lots of different caps, limits, and ceilings. For instance the cap on the number of operations per transaction is 100 atm.",
+          "Your challenge today is to successfully orchestrate and submit a transaction stuffed full of 100 operations.",
+          "For the developers out there still clinging to the Laboratory, now might be a good time to flex your coding skills and utilize one of our SDKs inside a loop."
+        ],
+        "links": [
+          "https://github.com/stellar/stellar-core/blob/master/src/xdr/Stellar-transaction.x#L510-L511",
+          "https://developers.stellar.org/docs/software-and-sdks/#sdks"
+        ]
+      }
+    },
+    {
+      "date": "2021-05-10T13:00:00.000Z",
+      "badges": {
+        "main": "GAZ3UXIBGWS2T72TLU7HH7NZQE2RORFO4KAFPTJ55PHBOFPXJHQHPTDS"
+      },
+      "context": {
+        "title": "Submit a hash signed transaction",
+        "paragraphs": [
+          "So you've heard about Stellar's multisig, but did you know that you can sign with far more than just a simple Ed25519 secret key? That's right! There's also sha256 hashes and pre-authorized transaction hashes.",
+          "In today's challenge your task is to add a very specific and special sha256 hash signer to your <code>$PK_SHORT</code> account and then to submit a second transaction using that signer to remove itself as a signer from the account. A sort of one time use key if you will.",
+          "Your clue for what your hash signer should be is included in the Resources links below."
+        ],
+        "links": [
+          "https://developers.stellar.org/docs/glossary/multisig/#hashx",
+          "https://horizon.stellar.org/transactions/3b00ce719e8c4f4d2218944fd60a78d2da83356f55c38ab733e0a46e386e25df/operations"
+        ]
+      }
+    },
+    {
+      "date": "2021-05-14T01:00:00.000Z",
+      "badges": {
+        "main": "GBMLLI5EMUKUZO2APQYXZANTUET2D4QLG5N3ECEQZKQ62ET3MDZLKW5O"
+      },
+      "context": {
+        "title": "Submit a pre-authorized transaction",
+        "paragraphs": [
+          "So you probably saw this one coming considering the previous quest, but today's challenge is to add as a signer and then submit to the network, a pre-authorized transaction. The last of the signer types accepted for submitting transactions to the network.",
+          "Pre-authorized transactions are a fantastic way to get around the somewhat cumbersome issue of multisig coordination. Just add a transaction hash as a signer to your account and then pass along that XDR to any other signers for additional signing or final submission.",
+          "Simple, yet smart! A Simart Contract™! And just another great tool in your ever expanding tool belt of experience as a Stellar developer."
+        ],
+        "links": [
+          "https://developers.stellar.org/docs/glossary/multisig/#pre-authorized-transaction"
+        ]
+      }
+    },
+    {
+      "date": "2021-05-17T13:00:00.000Z",
+      "badges": {
+        "main": "GC6XLPVFEVZO5SJ4PADO4KQVSITOHADJLR7RZEC4A3SYLA3FORKXRRHI"
+      },
+      "context": {
+        "title": "Successfully submit a clawback operation",
+        "paragraphs": [
+          "Ask and ye shall receive. Today we conquer the asset clawback operation even as the steam wafts up from its freshly minted edifice.",
+          "While currently a testnet only feature, the asset clawback operation will be a regulated asset issuer's excalibur of conquest in this brave new world of old → new finance.",
+          "It's the Ctrl+Z for blockchain payments. The mechanic for undoing mistaken or fraudulent payments. Once an issuer and trustline have been created under the asset clawback umbrella the issuer has the power to \"clawback\" any amount of that asset back into the issuing account effectively burning it from existence.",
+          "Arguably a controversial feature it's an absolute requirement for issuing regulated assets on the blockchain and ultimately it's issuer specific so effectively opt-in and obvious from a consumers perspective."
+        ],
+        "links": [
+          "https://developers.stellar.org/docs/glossary/clawback",
+          "https://github.com/stellar/stellar-core/releases/tag/v17.0.0",
+          "https://github.com/stellar/stellar-protocol/blob/master/core/cap-0035.md",
+          "https://horizon.stellar.org/assets?asset_issuer=GA7PT6IPFVC4FGG273ZHGCNGG2O52F3B6CLVSI4SNIYOXLUNIOSFCK4F"
+        ]
+      }
+    },
+    {
+      "date": "2021-05-21T01:00:00.000Z",
+      "badges": {
+        "main": "GAQRBLAAKJNMXVNZKBFCJ6E2XVXTXBUOXIAOQQNJBCUXBCZKR3HOLT2S"
+      },
+      "context": {
+        "title": "Mint a Stellar Quest style NFT",
+        "paragraphs": [
+          "Today's challenge will be difficult so prepare yourself. Take breaks, deep breaths, walk away for awhile if you need to. Don't stress it, the rewards will be worth the effort.",
+          "In reality minting an NFT is actually fairly straightforward, and while there are several variant methods we've used over the past few series we're going to explore the simplest.",
+          "What you'll need to do is take the PNG image provided in the Resources list, snag its base64 encoded string and bake that into your account's (<code>$PK_SHORT</code>) manageData fields utilizing both the key and value fields.",
+          "So just methodically slice off bits of the base64 string and pack those into both the key and value slots of consecutive manageDate operations until you run out of string.",
+          "An important gotcha caveat is to prefix the key with <strong>2</strong> characters of indexing data in order to ensure accurate reassembly of the base64 string later."
+        ],
+        "links": [
+          "https://api.stellar.quest/badge/GCEE5H3RI2MFP4UQ4NHFKLGTIHILWA775AM7KTLU5HUBSLOBJN7M4RSL?network=public&v=1"
+        ]
+      }
+    },
+    {
+      "date": "2021-05-24T13:00:00.000Z",
+      "badges": {
+        "main": "GAATGXGABT7HB7ALO3TAGVBVDE5B24LMSUQ3EKNCJHO5QBY4D5G5DZX5"
+      },
+      "context": {
+        "title": "Acquire and make use of a SEP-0010 JWT",
+        "paragraphs": [
+          "Outside of the relatively simple and controlled world of Stellar operations there's a whole universe of use cases and implementations. Even here though there is need for order and interoperability.",
+          "These needs are met by Stellar Ecosystem Proposals or SEPs. SEPs are the Stellar wilderness guidebooks ensuring everyone is following the same path and rules and is thus able to interoperate with each other.",
+          "<code>SEP-0010</code> is an authentication SEP outlining how to prove ownership of a Stellar account to a service. It is used in many other SEPs so it's an important foundational SEP to understand.",
+          "Today's task will be to acquire a <code>SEP-0010</code> JWT and then embed that JWT back into your account's (<code>$PK_SHORT</code>) manageData fields in identical fashion to how we embedded the NFT data in the previous quest.",
+          "Please note that this embed step <strong>is not</strong> part of <code>SEP-0010</code> and is <strong>definitely not</strong> something you'd do in practice. I'm just including it here as a method for reading back and making use of the generated <code>SEP-0010</code> JWT as part of the verification step. It's also a good refresher for Quest 6."
+        ],
+        "links": [
+          "https://github.com/stellar/stellar-protocol/blob/master/ecosystem/sep-0010.md",
+          "https://testanchor.stellar.org/.well-known/stellar.toml"
+        ]
+      }
+    },
+    {
+      "date": "2021-05-28T01:00:00.000Z",
+      "badges": {
+        "main": "GBZS5RP2YJDCF5RAJHXOHUXSBXD5KTDASIVSGETDYYI6OTPUS5ZFKIYA"
+      },
+      "context": {
+        "title": "Use SEP-0006 to acquire some MULT from testanchor.stellar.org",
+        "paragraphs": [
+          "Now that we've got <code>SEP-0010</code> under our belt let's make use of it to make an automated testnet <code>SEP-0006</code> deposit to SDF's testanchor endpoint.",
+          "Between <code>SEP-0006</code>, <code>SEP-0024</code> and <code>SEP-0031</code> we have all we need to connect Stellar with all the real world's \"anchored\" assets. <code>SEP-0006</code> is the API-only method for handling the flow so let's try that.",
+          "Your task today will be to use <code>SEP-0006</code> to request a deposit of <code>MULT</code> issued by <code>GDLD...FSMM</code> from the <a href=\"https://testanchor.stellar.org/.well-known/stellar.toml\">testanchor.stellar.org</a> endpoint.",
+          "This task will actually make use of <code>SEP-0010</code>, <code>SEP-0006</code> and <code>SEP-0012</code> so buckle up, read the docs, and enjoy the ride!",
+          "Finally I'm sure you're noticing by now we've begun to drift away from the Laboratory harbor into the more adventurous waters of the greater world wide web.",
+          "For Quests like this if you're uncomfortable whipping up some new code feel free to use <code>curl</code> or a tool like <a href=\"https://www.postman.com\">www.postman.com</a> for constructing your non-Laboratory API calls."
+        ],
+        "links": [
+          "https://github.com/stellar/stellar-protocol/blob/master/ecosystem/sep-0006.md",
+          "https://testanchor.stellar.org/.well-known/stellar.toml",
+          "https://github.com/stellar/stellar-protocol/blob/master/ecosystem/sep-0012.md",
+          "https://github.com/stellar/stellar-protocol/blob/master/ecosystem/sep-0010.md"
+        ]
+      }
+    }
+  ]
+}

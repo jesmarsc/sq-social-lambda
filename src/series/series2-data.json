@@ -1,0 +1,167 @@
+{
+  "prizes": [],
+  "challenges": [
+    {
+      "date": "2020-12-14T15:00:00.000Z",
+      "badges": {
+        "main": "GBVVYEFWUIG7RXX6RBYJOFMGKEEEEN3TVEZYB5J6HNIQ5UON5O4NH23F",
+        "mono": "GB6MASTVPZINM4AS4QXI63JKGIV3PCWKUWWHD2UNBGLEK6Y7F2IDHKVO"
+      },
+      "context": {
+        "title": "Create and fund a Stellar account",
+        "paragraphs": [
+          "In this challenge your task is to <strong>create and fund</strong> a brand new Stellar account <code>$PUK_SHORT</code> (seen below) <strong>with 5000 XLM</strong> on the testnet.",
+          "Include the <a href=\"https://xorbin.com/tools/sha256-hash-calculator\" target=\"_blank\">SHA256</a> hash of the string <strong>Stellar Quest Series 2</strong> as the <code>MEMO_HASH</code> in the transaction memo field.",
+          "You will be required to use the <code>createAccount</code> operation, so don't just rely on friendbot. Good luck!"
+        ],
+        "links": [
+          "https://developers.stellar.org/docs/glossary/transactions",
+          "https://developers.stellar.org/docs/start/list-of-operations/#create-account",
+          "https://developers.stellar.org/docs/glossary/transactions/#memo",
+          "https://laboratory.stellar.org/#txbuilder?network=test"
+        ]
+      }
+    },
+    {
+      "date": "2020-12-18T02:00:00.000Z",
+      "badges": {
+        "main": "GCZODXV5HXRHHOZHWE57LMWIELKAXPKC64SOEBGTK7BV4GMRMOKYDIQQ",
+        "mono": "GCJ35JDQBYIPWQZMEF5AY6ONEF5VRC4ZO3BAZDPWBL7PZ2OBBVBWPZQ3"
+      },
+      "context": {
+        "title": "Construct and execute a multi-operational transaction",
+        "paragraphs": [
+          "Did you know each Stellar transaction can include as many as 100 unique operations? 😱 This is an incredible feature as each transaction is atomic meaning either the whole group of operations succeeds or fails together.",
+          "In this challenge your task is to create a multi-operational transaction which creates a custom asset trustline on your account and pays that asset to your account from the issuing account all in the same transaction.",
+          "<strong>Fun fact:</strong> This is actually what we do here at Stellar Quest when issuing prizes. The claim transaction is a nice little multi-operational transaction adding and issuing the badge to your account all in a single transaction."
+        ],
+        "links": [
+          "https://developers.stellar.org/docs/glossary/transactions",
+          "https://developers.stellar.org/docs/glossary/operations"
+        ]
+      }
+    },
+    {
+      "date": "2020-12-21T14:00:00.000Z",
+      "badges": {
+        "main": "GAAZYTMBB7POYKPQLBTCQL6HESM5XZR6OMBFHUCBXQ6UHKP6JMP3JDBD",
+        "mono": "GBB7ZIVXUIENUJTYCWCVXBSBORJBHNFS7GBM7IZL274P3E3OPA2PQL3R"
+      },
+      "context": {
+        "title": "Create and submit a fee bump transaction",
+        "paragraphs": [
+          "Fee channels are a common best practice in Stellar development. Their goal is to delegate fee payments away from user accounts for an improved UX. Protocol 13 saw a huge improvement to this flow with the introduction of fee bump transactions.",
+          "In this challenge your task is to create and execute a fee bump transaction which consumes the sequence number from your account <code>$PUK_SHORT</code> (seen below) but the transaction fee from some other account.",
+          "This is <em>actually</em> how Stellar Quest delivers your prizes to you. A multi-operational transaction wrapped in a fee bump transaction. You pay the sequence number but we pay the transaction fee. How nice!"
+        ],
+        "links": [
+          "https://developers.stellar.org/docs/glossary/fee-bumps",
+          "https://laboratory.stellar.org/#txbuilder?params=eyJhdHRyaWJ1dGVzIjp7ImZlZSI6IjEwMCJ9LCJmZWVCdW1wQXR0cmlidXRlcyI6eyJtYXhGZWUiOiIxMDAifSwidHhUeXBlIjoiRkVFX0JVTVAifQ",
+          "https://medium.com/stellar-community/fee-bump-transactions-explained-9a6a365c0fb6",
+          "https://www.stellar.org/developers-blog/how-we-simplified-fees-on-the-stellar-network"
+        ]
+      }
+    },
+    {
+      "date": "2020-12-25T02:00:00.000Z",
+      "badges": {
+        "main": "GDHXJHJBX6WOVO7HFKXR3HQVQBK2JNVGJL44FSE2WBN2WKY76JHPSCOL",
+        "mono": "GBWXWUM5LSAWFC7PHNZDYNMQDO5PXKA23UDBS6K5DPK6SWZUKS7Z36WA"
+      },
+      "context": {
+        "title": "Create a claimable balance",
+        "paragraphs": [
+          "This one will be a bit tricky but I believe in you.",
+          "Today you've gotta sort out how to create a claimable balance that is <strong>only claimable by you</strong> and <strong>only claimable after the next challenge</strong>.",
+          "Additionally the claimable balance <strong>must be denoted in the native XLM asset</strong> for an exact <strong>amount of 100 XLM</strong>."
+        ],
+        "links": [
+          "https://developers.stellar.org/docs/glossary/claimable-balance",
+          "https://developers.stellar.org/api/resources/claimablebalances",
+          "https://www.stellar.org/developers-blog/reducing-friction-on-the-stellar-network-with-claimable-balances",
+          "https://www.stellar.org/blog/protocol-14-improvements"
+        ]
+      }
+    },
+    {
+      "date": "2020-12-28T14:00:00.000Z",
+      "badges": {
+        "main": "GCBCEJJX6ZD4FVASYN6KFOZXN6ANGR4UOGTL7M6MX6GHLMS7IIMPOOTZ",
+        "mono": "GCW5SXKPRNKCNDITRKU3P6VLEUI356S2AKQ6YU6SKOFTJSX3GVCP4FUJ"
+      },
+      "context": {
+        "title": "Claim your claimable balance",
+        "paragraphs": [
+          "Remember that claimable balance you setup in the last challenge?",
+          "This challenge is to \"simply\" <strong>claim that balance and get your XLM back</strong>."
+        ],
+        "links": [
+          "https://developers.stellar.org/docs/glossary/claimable-balance",
+          "https://developers.stellar.org/api/resources/claimablebalances",
+          "https://laboratory.stellar.org/#explorer?resource=claimable_balances&endpoint=multiple&network=test"
+        ]
+      }
+    },
+    {
+      "date": "2021-01-01T02:00:00.000Z",
+      "badges": {
+        "main": "GBF3TKZ4FKU7VID5SUGWNGH54TNL7QEUZIIGJ3MP7HUDWALDL3UXVSNN",
+        "mono": "GCZX7ENHWSPG44IFJBWAEAXKEP3MYRRVVTUQ6VLTKMVRVKSG2EZCDD52"
+      },
+      "context": {
+        "title": "Sponsor the absolute minimum balance for a new account",
+        "paragraphs": [
+          "Storing stateful data on the Stellar blockchain isn't free. Everything from data attributes, trustlines and offers all the way down to just creating an account all increase the <a href=\"https://developers.stellar.org/docs/glossary/minimum-balance\" target=\"_blank\">minimum balance</a> of the account in question.",
+          "Up until protocol 15 this minimum balance had to be paid for by the account itself which often makes sense. However there are instances where it would be more convenient or even essential for these fees to be staked by some other account, a \"sponsor\" account.",
+          "In this challenge your task is to <strong>create a brand new 0 XLM balance account with the absolute minimum balance sponsored by your <code>$PUK_SHORT</code> account</strong> (seen below)."
+        ],
+        "links": [
+          "https://developers.stellar.org/docs/glossary/sponsored-reserves",
+          "https://developers.stellar.org/docs/start/list-of-operations/#begin-sponsoring-future-reserves",
+          "https://developers.stellar.org/docs/start/list-of-operations/#end-sponsoring-future-reserves",
+          "https://github.com/stellar/stellar-protocol/blob/master/core/cap-0033.md"
+        ]
+      }
+    },
+    {
+      "date": "2021-01-04T14:00:00.000Z",
+      "badges": {
+        "main": "GBDW6K2TIS2OFKPW27HHEL5LCGQJRCG5YBMDR4R6EDPX2ZJQVGJ4ZQOO",
+        "mono": "GAYOXIOS6V7L3P4KBPXJ2KBRAJA7PZHH6WMM4MTBNH7HAF5HZE4T6NC7"
+      },
+      "context": {
+        "title": "Revoke account sponsorship for the account you're sponsoring",
+        "paragraphs": [
+          "Remember that account you sponsored in the last challenge? Well the winds of change are blowing and you no longer wish to sponsor their absolute minimum balance any longer.",
+          "In this challenge you need to <strong>revoke account sponsorship for the account you're currently sponsoring</strong>."
+        ],
+        "links": [
+          "https://developers.stellar.org/docs/glossary/sponsored-reserves/#revoke-sponsorship",
+          "https://developers.stellar.org/docs/start/list-of-operations/#revoke-sponsorship"
+        ]
+      }
+    },
+    {
+      "date": "2021-01-08T02:00:00.000Z",
+      "badges": {
+        "main": "GDME25VQY3L4GRLS22JY6RNTI6RNYWJ7T7KQEIPZHUO672NDPXS7EQUB",
+        "mono": "GDL7QOHYQ6GWV4C3ZDUAM6IP5DL5W3DHF2PYFNSTAHJWANKVSSELI7PK"
+      },
+      "context": {
+        "title": "Create and host a stellar.toml file for your account",
+        "paragraphs": [
+          "Not all digital info should be stored on a blockchain. Some information needs to be mutable and derives no benefit from maintaining a blockchain paper trail. For these requirements we must look outside Stellar.",
+          "Blockchain database software like IPFS, Torrent or Filecoin can store stuff in a decentralized manner but are overkill when simply storing basic, mutable metadata for a Stellar account. For that we'll use SEP 1.",
+          "SEPs, or Stellar Ecosystem Proposals are ecosystem initiatives aimed at providing consensus around common Stellar use cases. For SEP 1 that's providing a common format for Stellar account metadata.",
+          "In today's challenge your task is to create, host and link to a stellar.toml file with an <code>SQ02_EASTER_EGG</code> field containing the text: <pre>Log into series 2 of Stellar Quest then visit quest.stellar.org/series2. Finally drag and drop your Stellar Quest series 2 badge PNG images onto the screen. Enjoy!</pre>",
+          "Note you won't be able to solve today's challenge using only the laboratory. You'll need to host a toml file and for that you'll need a basic server. Personally I love <a href=\"https://runkit.com\" target=\"_blank\">RunKit</a> and <a href=\"https://codesandbox.io\" target=\"_blank\">CodeSandbox</a> but feel free to use whatever works. Good luck!"
+        ],
+        "links": [
+          "https://github.com/stellar/stellar-protocol/blob/master/ecosystem/sep-0001.md",
+          "https://developers.stellar.org/docs/issuing-assets/publishing-asset-info/#what-is-a-stellartoml",
+          "https://medium.com/stellar-community/how-changes-are-made-to-the-stellar-network-760abbb8d127"
+        ]
+      }
+    }
+  ]
+}
