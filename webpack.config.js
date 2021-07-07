@@ -1,6 +1,7 @@
 const path = require('path');
 const nodeExternals = require('webpack-node-externals');
 const slsw = require('serverless-webpack');
+const CopyPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   mode: 'production',
@@ -34,4 +35,9 @@ module.exports = {
       },
     ],
   },
+  plugins: [
+    new CopyPlugin({
+      patterns: [{ from: 'src/fonts/fonts.conf', to: 'src/fonts/fonts.conf' }],
+    }),
+  ],
 };

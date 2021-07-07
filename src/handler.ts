@@ -36,8 +36,8 @@ const pluralSuffix: { [key: string]: string } = {
 };
 
 let backgroundImage: fabric.Image;
-let badgeImageCache: { [publicKey: string]: fabric.Image } = {};
-let coinImage: fabric.Image;
+let badgeImageCache: { [publicKey: string]: string } = {};
+let coinImageCache: string;
 
 const generateCompletionImage = async (
   set: number,
@@ -52,22 +52,18 @@ const generateCompletionImage = async (
   }
 
   if (!badgeImageCache[badgeIssuer]) {
-    badgeImageCache[badgeIssuer] = await loadFabricImage(
+    const badge = await loadFabricImage(
       `${baseUrl}/badge/${badgeIssuer}?v=${set}`
     );
-    badgeImageCache[badgeIssuer].set({ originX: 'center' });
-    badgeImageCache[badgeIssuer].scaleToWidth(64);
+    badge.scaleToWidth(64);
+    badgeImageCache[badgeIssuer] = badge.toDataURL({});
   }
 
-  const badgeImage = badgeImageCache[badgeIssuer];
-
   const canvas = new fabric.StaticCanvas(null, {
-    width: backgroundImage.getScaledWidth(),
-    height: backgroundImage.getScaledHeight(),
+    width: backgroundImage.width,
+    height: backgroundImage.height,
     renderOnAddRemove: false,
   });
-
-  canvas.setBackgroundImage(backgroundImage, () => {});
 
   const imageText = new fabric.Text('', {
     fontFamily: 'Ubuntu',
@@ -78,8 +74,11 @@ const generateCompletionImage = async (
     originX: 'center',
   });
 
+  const badgeImage = await loadFabricImage(badgeImageCache[badgeIssuer]);
+  badgeImage.set({ originX: 'center' });
+
   const badgeText = await cloneObject(imageText);
-  badgeText.set({ text: '+1 NFT', top: badgeImage.getScaledHeight() + 8 });
+  badgeText.set({ text: '+1 NFT', top: badgeImage.height! + 8 });
 
   const badgeGroup = new fabric.Group([badgeImage, badgeText]);
 
@@ -88,11 +87,14 @@ const generateCompletionImage = async (
   });
 
   if (position && series.prizes.length > 0) {
-    if (!coinImage) {
-      coinImage = await loadFabricImageLocal(xlmCoin);
-      coinImage.set({ originX: 'center' });
-      coinImage.scaleToWidth(64);
+    if (!coinImageCache) {
+      const coin = await loadFabricImageLocal(xlmCoin);
+      coin.scaleToWidth(64);
+      coinImageCache = coin.toDataURL({});
     }
+
+    const coinImage = await loadFabricImage(coinImageCache);
+    coinImage.set({ originX: 'center' });
 
     const coinText = await cloneObject(imageText);
     coinText.set({
@@ -141,6 +143,8 @@ const generateCompletionImage = async (
 
   rewards.add(rewardsBackground);
   rewardsBackground.sendToBack();
+
+  canvas.setBackgroundImage(backgroundImage, () => {});
 
   canvas.add(rewards);
   rewards.set({
