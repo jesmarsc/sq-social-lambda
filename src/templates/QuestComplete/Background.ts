@@ -1,8 +1,8 @@
 import { fabric } from 'fabric';
 import fs from 'fs/promises';
 
-import { gradientColorStops } from '../constants/styles';
-import { loadFabricImageLocal } from './utils';
+import { gradientColorStops } from 'src/constants/styles';
+import { loadLocalFabricImage } from 'src/templates/utils';
 
 // @ts-ignore: Missing types
 fabric.nodeCanvas.registerFont('src/fonts/Ubuntu-Bold.ttf', {
@@ -18,7 +18,7 @@ const QuestCompletion = async (width: number, height: number) => {
     renderOnAddRemove: false,
   });
 
-  const backgroundImage = await loadFabricImageLocal(
+  const backgroundImage = await loadLocalFabricImage(
     'assets/moon-background.png'
   );
 
@@ -69,7 +69,7 @@ const QuestCompletion = async (width: number, height: number) => {
 
   const image = canvas.toDataURL().replace(/^data:image\/png;base64,/, '');
 
-  await fs.writeFile('src/assets/quest-complete.png', image, {
+  await fs.writeFile('src/assets/completion-bg.png', image, {
     encoding: 'base64',
   });
 };

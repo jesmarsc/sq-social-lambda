@@ -8,7 +8,7 @@ module.exports = {
   entry: slsw.lib.entries,
   target: 'node',
   externalsPresets: { node: true },
-  externals: [nodeExternals()],
+  externals: [nodeExternals({ allowlist: ['lambda-api'] })],
   output: {
     filename: '[name].js',
     path: path.resolve(__dirname, '.webpack'),
@@ -17,6 +17,9 @@ module.exports = {
   },
   resolve: {
     extensions: ['.ts', '.js', '.svg', '.ttf', '.png'],
+    alias: {
+      src: path.resolve(__dirname, 'src'),
+    },
   },
   module: {
     rules: [
@@ -37,7 +40,12 @@ module.exports = {
   },
   plugins: [
     new CopyPlugin({
-      patterns: [{ from: 'src/fonts/fonts.conf', to: 'src/fonts/fonts.conf' }],
+      patterns: [
+        {
+          from: 'src/assets/fonts/fonts.conf',
+          to: 'src/assets/fonts/fonts.conf',
+        },
+      ],
     }),
   ],
 };

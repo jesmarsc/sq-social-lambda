@@ -20,7 +20,7 @@ export const loadFabricImage = (
   );
 };
 
-export const loadFabricImageLocal = (
+export const loadLocalFabricImage = (
   path: string,
   options?: fabric.IImageOptions
 ) => loadFabricImage(`file://${__dirname}/../${path}`, options);

@@ -24,5 +24,8 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": ""
+  "description": "",
+  "dependencies": {
+    "lambda-api": "^0.11.1"
+  }
 }
