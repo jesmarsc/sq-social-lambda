@@ -1,14 +1,21 @@
 const path = require('path');
-const nodeExternals = require('webpack-node-externals');
 const slsw = require('serverless-webpack');
+const nodeExternals = require('webpack-node-externals');
 const CopyPlugin = require('copy-webpack-plugin');
+
+const isLocal = slsw.lib.webpack.isLocal;
 
 module.exports = {
   mode: 'production',
   entry: slsw.lib.entries,
   target: 'node',
   externalsPresets: { node: true },
-  externals: [nodeExternals({ allowlist: ['lambda-api'] })],
+  externals: [
+    nodeExternals({
+      /* Fabric.js in Lambda Layer, not required in bundle. */
+      allowlist: isLocal ? [] : ['lambda-api'],
+    }),
+  ],
   output: {
     filename: '[name].js',
     path: path.resolve(__dirname, '.webpack'),
@@ -29,7 +36,7 @@ module.exports = {
         loader: 'babel-loader',
       },
       {
-        test: /\.(woff(2)?|ttf|eot|svg|png|conf)(\?v=\d+\.\d+\.\d+)?$/,
+        test: /\.(woff(2)?|ttf|eot|svg|png)(\?v=\d+\.\d+\.\d+)?$/,
         type: 'asset/resource',
       },
       {

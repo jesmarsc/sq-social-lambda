@@ -11,6 +11,8 @@
     "babel-loader": "^8.2.2",
     "copy-webpack-plugin": "^9.0.1",
     "fabric": "^4.5.1",
+    "lambda-api": "^0.11.1",
+    "serverless": "^2.51.2",
     "serverless-offline": "^7.0.0",
     "serverless-webpack": "^5.5.1",
     "typescript": "^4.3.5",
@@ -24,8 +26,5 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": "",
-  "dependencies": {
-    "lambda-api": "^0.11.1"
-  }
+  "description": ""
 }
