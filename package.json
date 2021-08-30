@@ -21,7 +21,9 @@
     "webpack-node-externals": "^3.0.0"
   },
   "scripts": {
-    "start": "serverless offline --useChildProcesses"
+    "start": "serverless offline --useChildProcesses",
+    "build": "serverless package",
+    "deploy": "serverless deploy"
   },
   "keywords": [],
   "author": "",

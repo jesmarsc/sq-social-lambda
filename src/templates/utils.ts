@@ -27,3 +27,30 @@ export const loadLocalFabricImage = (
 
 export const cloneObject = <Type extends fabric.Object>(object: Type) =>
   new Promise<Type>((resolve) => object.clone((clone: Type) => resolve(clone)));
+
+export const metaTemplate = (imageSrc: string) => {
+  return `
+    <head>
+      <meta property="og:title" content="Stellar Quest" />
+      <meta property="og:site_name" content="Stellar Quest" />
+      <meta name="twitter:title" content="Stellar Quest" />
+
+      <meta property="og:description" content="Learn Stellar, Collect NFTs, Earn XLM!" />
+      <meta name="twitter:description" content="Learn Stellar, Collect NFTs, Earn XLM!" />
+      <meta name="description" content="Learn Stellar, Collect NFTs, Earn XLM!" />
+
+      <meta property="og:image" content="${imageSrc}" />
+      <meta name="twitter:image:src" content="${imageSrc}" />
+
+      <meta property="og:url" content="https://quest.stellar.org/" />
+      
+      <meta property="og:type" content="website" />
+      <meta name="twitter:card" content="summary_large_image" />
+    </head>
+    <body>
+      <h1>Stellar Quest</h1>
+      <img src="${imageSrc}" alt="Stellar Quest"/>
+      <p>Learn Stellar, Collect NFTs, Earn XLM!</p>
+    </body>
+  `;
+};

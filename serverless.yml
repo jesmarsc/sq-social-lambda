@@ -23,7 +23,7 @@ functions:
     events:
       - http:
           method: get
-          path: 'v1/{proxy+}'
+          path: '{proxy+}'
     environment:
       NODE_PATH: './:/opt/nodejs/node_modules'
       FONTCONFIG_PATH: '/var/task/fonts'

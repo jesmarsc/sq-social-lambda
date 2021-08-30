@@ -2,6 +2,7 @@ const path = require('path');
 const slsw = require('serverless-webpack');
 const nodeExternals = require('webpack-node-externals');
 const CopyPlugin = require('copy-webpack-plugin');
+const webpack = require('webpack');
 
 const isLocal = slsw.lib.webpack.isLocal;
 
@@ -46,6 +47,7 @@ module.exports = {
     ],
   },
   plugins: [
+    new webpack.EnvironmentPlugin({ PRODUCTION: !slsw.lib.webpack.isLocal }),
     new CopyPlugin({
       patterns: [
         {
