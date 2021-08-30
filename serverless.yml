@@ -13,7 +13,7 @@ provider:
   apiGateway:
     shouldStartNameWithService: true
     binaryMediaTypes:
-      - 'image/png'
+      - '*/*'
   runtime: nodejs14.x
   region: us-west-1
 

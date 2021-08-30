@@ -7,7 +7,7 @@ const webpack = require('webpack');
 const isLocal = slsw.lib.webpack.isLocal;
 
 module.exports = {
-  mode: 'production',
+  mode: isLocal ? 'development' : 'production',
   entry: slsw.lib.entries,
   target: 'node',
   externalsPresets: { node: true },
@@ -47,7 +47,11 @@ module.exports = {
     ],
   },
   plugins: [
-    new webpack.EnvironmentPlugin({ PRODUCTION: !slsw.lib.webpack.isLocal }),
+    new webpack.EnvironmentPlugin({ PRODUCTION: !isLocal }),
+    new webpack.NormalModuleReplacementPlugin(
+      /^\.\/s3-service$/,
+      path.join(__dirname, './src/shims/s3.js')
+    ),
     new CopyPlugin({
       patterns: [
         {

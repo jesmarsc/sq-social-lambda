@@ -33,7 +33,9 @@ router.use((req, res, next) => {
 router.get('/completion', async (req, res) => {
   const { query } = req;
   const image = await generateQuestComplete(query as any);
-  return res.header('content-type', 'image/png').send(image);
+
+  res.type('png');
+  return res.send(image);
 });
 
 const handler: APIGatewayProxyHandler = async (event, context) => {
