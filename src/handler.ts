@@ -1,10 +1,17 @@
 import { APIGatewayProxyHandler } from 'aws-lambda';
-import api from 'lambda-api';
+import api, { Request, Response, NextFunction } from 'lambda-api';
 
 import generateQuestComplete from 'src/templates/QuestComplete/QuestComplete';
 import { metaTemplate } from 'src/templates/utils';
+import { parseError } from 'src/utils/utils';
 
 const router = api();
+
+router.use((error: any, req: Request, res: Response, next: NextFunction) => {
+  const parsedError = parseError(error);
+  res.status(parsedError.status).json(parsedError);
+  next();
+});
 
 router.use((req, res, next) => {
   const { userAgent, query, path, requestContext } = req;
@@ -48,21 +55,14 @@ const handler: APIGatewayProxyHandler = async (event, context) => {
 
     return response;
   } catch (error: any) {
-    let message = error?.message || 'Request failed.';
-
-    if (typeof error === 'string') message = error;
-
-    const statusCode = error?.status || 400;
+    const parsedError = parseError(error);
 
     return {
-      statusCode,
+      statusCode: parsedError.status,
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({
-        status: statusCode,
-        message,
-      }),
+      body: JSON.stringify(parsedError),
     };
   }
 };
