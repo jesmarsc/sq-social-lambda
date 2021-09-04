@@ -1,4 +1,6 @@
-service: lambda-service
+org: jesmarsc
+app: social-image-generator
+service: social-image-generator
 
 plugins:
   - serverless-webpack
