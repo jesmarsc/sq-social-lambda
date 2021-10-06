@@ -46,19 +46,20 @@ This micro-service makes use of Serverless Framework to handle deployments to AW
   1. We have to set up a Lambda layer that contains the larger dependencies of this micro-service (node-canvas and Fabric.js.) Currently this is deployed using this <a aria-label="lambda layer deployment" href="https://serverlessrepo.aws.amazon.com/applications/arn:aws:serverlessrepo:us-east-1:990551184979:applications~lambda-layer-canvas-nodejs">Lambda layer</a> through the AWS dashboard.
 
   2. After deploying, the Lambda layer is given an ARN which should be copied and pasted into your serverless.yml.
+
      ```
      functions:
        image-generator:
-           handler: src/handler.default
-           events:
-               - http:
-                   method: get
-                   path: '{proxy+}'
-           environment:
-               NODE_PATH: './:/opt/nodejs/node_modules'
-               FONTCONFIG_PATH: '/var/task/fonts'
-           layers:
-               - *PASTE HERE*
+         handler: src/handler.default
+         events:
+           - http:
+               method: get
+               path: '{proxy+}'
+         environment:
+           NODE_PATH: './:/opt/nodejs/node_modules'
+           FONTCONFIG_PATH: '/var/task/fonts'
+         layers:
+           - *PASTE HERE*
      ```
 
 - You have added this project to your Serverless dashboard.
