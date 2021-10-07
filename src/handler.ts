@@ -2,7 +2,6 @@ import { APIGatewayProxyHandler } from 'aws-lambda';
 import api, { Request, Response, NextFunction } from 'lambda-api';
 
 import generateQuestComplete from 'src/templates/QuestComplete/QuestComplete';
-// import { metaTemplate } from 'src/templates/utils';
 import { parseError } from 'src/utils/utils';
 
 const router = api();
@@ -13,36 +12,12 @@ router.use((error: any, req: Request, res: Response, next: NextFunction) => {
   next();
 });
 
-// router.use((req, res, next) => {
-//   const { userAgent, query, path, requestContext } = req;
-//   const { share } = query;
-
-//   if (share === undefined) return next();
-
-//   if (/^(facebookexternalhit)|(Twitterbot)|(Pinterest)/gi.test(userAgent)) {
-//     const baseUrl = `https://${
-//       process.env.PRODUCTION ? requestContext.domainName : req.headers.host
-//     }/dev`;
-
-//     const imageSrc = Object.entries(query)
-//       .reduce((newUrl, [key, value]) => {
-//         if (value) newUrl.searchParams.set(key, value);
-//         return newUrl;
-//       }, new URL(baseUrl + path))
-//       .toString();
-
-//     return res.html(metaTemplate(imageSrc));
-//   }
-
-//   return res.redirect('https://quest.stellar.org/');
-// });
-
 router.get('/completion', async (req, res) => {
   const { query } = req;
   const image = await generateQuestComplete(query as any);
 
   res.type('png');
-  return res.send(image);
+  return res.header('cache-control', 'public, max-age=2592000').send(image);
 });
 
 const handler: APIGatewayProxyHandler = async (event, context) => {

@@ -1,7 +1,7 @@
 import { fabric } from 'fabric';
 import { performance } from 'perf_hooks';
 
-import { loadLocalFabricImage } from 'src/templates/utils';
+import { loadFabricImage, loadLocalFabricImage } from 'src/templates/utils';
 
 import series1 from 'src/series/series1-data.json';
 import series2 from 'src/series/series2-data.json';
@@ -11,7 +11,7 @@ import UbuntuBold from 'src/assets/fonts/Ubuntu-Bold.ttf';
 
 import background from 'src/assets/completion-bg.png';
 import token from 'src/assets/token.png';
-import badge from 'src/assets/badge.png';
+import { baseUrl } from 'src/constants/url';
 
 // @ts-ignore: Missing types
 fabric.nodeCanvas.registerFont(UbuntuBold, {
@@ -39,7 +39,6 @@ const textOptions = {
   originX: 'center',
 };
 
-// let badgeImageCache: { [publicKey: string]: string } = {};
 const imageElementCache: { [imageSrc: string]: HTMLImageElement } = {};
 
 const getElement = async (src: string) => {
@@ -81,13 +80,13 @@ const generateQuestComplete = async (params: {
       };
   }
 
-  // if (!badgeImageCache[badgeIssuer]) {
-  //   const badge = await loadFabricImage(
-  //     `${baseUrl}/badge/${badgeIssuer}?v=${set}`
-  //   );
-  //   badge.scaleToWidth(64);
-  //   badgeImageCache[badgeIssuer] = badge.toDataURL({});
-  // }
+  if (!imageElementCache[badgeIssuer]) {
+    const badge = await loadFabricImage(
+      `${baseUrl}/badge/${badgeIssuer}?v=${set}`
+    );
+    badge.scaleToWidth(64);
+    imageElementCache[badgeIssuer] = badge.getElement() as HTMLImageElement;
+  }
 
   const backgroundImage = new fabric.Image(await getElement(background));
 
@@ -97,7 +96,7 @@ const generateQuestComplete = async (params: {
     renderOnAddRemove: false,
   });
 
-  const badgeImage = new fabric.Image(await getElement(badge), {
+  const badgeImage = new fabric.Image(await getElement(badgeIssuer), {
     originX: 'center',
   });
   badgeImage.scaleToWidth(64);
@@ -117,7 +116,7 @@ const generateQuestComplete = async (params: {
     const tokenImage = new fabric.Image(await getElement(token), {
       originX: 'center',
     });
-    tokenImage.scaleToWidth(64);
+    tokenImage.scaleToHeight(64);
 
     const coinText = new fabric.Text(`+${series.prizes[position - 1]} XLM`, {
       ...textOptions,

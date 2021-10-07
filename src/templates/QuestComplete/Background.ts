@@ -1,11 +1,11 @@
 import { fabric } from 'fabric';
 import fs from 'fs/promises';
 
-import { gradientColorStops } from 'src/constants/styles';
-import { loadLocalFabricImage } from 'src/templates/utils';
+import { gradientColorStops } from '../../constants/styles';
+import { loadLocalFabricImage } from '../utils';
 
 // @ts-ignore: Missing types
-fabric.nodeCanvas.registerFont('src/fonts/Ubuntu-Bold.ttf', {
+fabric.nodeCanvas.registerFont('src/assets/fonts/Ubuntu-Bold.ttf', {
   family: 'Ubuntu',
   weight: 'bold',
   style: 'normal',
@@ -18,9 +18,7 @@ const QuestCompletion = async (width: number, height: number) => {
     renderOnAddRemove: false,
   });
 
-  const backgroundImage = await loadLocalFabricImage(
-    'assets/moon-background.png'
-  );
+  const backgroundImage = await loadLocalFabricImage('assets/moon-bg.png');
 
   const textGradient = new fabric.Gradient({
     type: 'linear',
@@ -53,7 +51,7 @@ const QuestCompletion = async (width: number, height: number) => {
     top: canvas.getHeight() * 0.12,
   });
 
-  const footer = new fabric.Text('SERIES 4 NOW LIVE', {
+  const footer = new fabric.Text('SERIES 3 AVAILABLE NOW', {
     top: canvas.getHeight() - 8,
     fill: 'black',
     fontFamily: 'Ubuntu',
