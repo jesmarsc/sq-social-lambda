@@ -84,6 +84,7 @@ const generateQuestComplete = async (params: {
     const badge = await loadFabricImage(
       `${baseUrl}/badge/${badgeIssuer}?v=${set}`
     );
+
     badge.scaleToWidth(64);
     imageElementCache[badgeIssuer] = badge.getElement() as HTMLImageElement;
   }
@@ -164,14 +165,25 @@ const generateQuestComplete = async (params: {
   rewards.add(rewardsBackground);
   rewardsBackground.sendToBack();
 
+  const footer = new fabric.Text(`SERIES ${set}  ·  QUEST ${quest}`, {
+    top: canvas.getHeight() - 8,
+    fill: 'black',
+    fontFamily: 'Ubuntu',
+    fontSize: 16,
+    originY: 'bottom',
+    fontWeight: 'bold',
+    shadow: '0 0 2 purple',
+  });
+
   canvas.setBackgroundImage(backgroundImage, () => {});
 
-  canvas.add(rewards);
+  canvas.add(rewards, footer);
   rewards.set({
     originY: 'center',
     top: canvas.getHeight() * 0.65,
   });
   rewards.centerH();
+  footer.centerH();
 
   // const time1 = performance.now();
 

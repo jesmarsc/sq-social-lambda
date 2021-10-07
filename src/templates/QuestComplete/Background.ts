@@ -51,19 +51,20 @@ const QuestCompletion = async (width: number, height: number) => {
     top: canvas.getHeight() * 0.12,
   });
 
-  const footer = new fabric.Text('SERIES 3 AVAILABLE NOW', {
-    top: canvas.getHeight() - 8,
-    fill: 'black',
-    fontFamily: 'Ubuntu',
-    fontSize: 16,
-    originY: 'bottom',
-    fontWeight: 'bold',
-    shadow: '0 0 2 purple',
-  });
+  // const footer = new fabric.Text('SERIES 3 AVAILABLE NOW', {
+  //   top: canvas.getHeight() - 8,
+  //   fill: 'black',
+  //   fontFamily: 'Ubuntu',
+  //   fontSize: 16,
+  //   originY: 'bottom',
+  //   fontWeight: 'bold',
+  //   shadow: '0 0 2 purple',
+  // });
+  // canvas.add(footer);
+  // footer.centerH();
 
-  canvas.add(backgroundImage, header, footer);
+  canvas.add(backgroundImage, header);
   header.centerH();
-  footer.centerH();
 
   const image = canvas.toDataURL().replace(/^data:image\/png;base64,/, '');
 
