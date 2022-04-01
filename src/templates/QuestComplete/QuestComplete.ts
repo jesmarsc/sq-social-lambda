@@ -6,6 +6,7 @@ import { loadFabricImage, loadLocalFabricImage } from 'src/templates/utils';
 import series1 from 'src/series/series1-data.json';
 import series2 from 'src/series/series2-data.json';
 import series3 from 'src/series/series3-data.json';
+import series4 from 'src/series/series4-data.json';
 
 import UbuntuBold from 'src/assets/fonts/Ubuntu-Bold.ttf';
 
@@ -20,7 +21,7 @@ fabric.nodeCanvas.registerFont(UbuntuBold, {
   style: 'normal',
 });
 
-const seriesData = [series1, series2, series3];
+const seriesData = [series1, series2, series3, series4];
 
 const pluralRules = new Intl.PluralRules('en-US', { type: 'ordinal' });
 const pluralSuffix: { [key: string]: string } = {

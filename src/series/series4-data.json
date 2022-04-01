@@ -1,0 +1,41 @@
+{
+    "prizes": [],
+    "challenges": [
+        {
+            "date": "2021-10-25T13:00:00.000Z",
+            "badges": {
+                "main": "GAICLDUA5WSJ3KQPIHQU4KNSJ7FAKVO35RFFIGZXY3ZML3T3YHRPHT7R"
+            }
+        },
+        {
+            "date": "2021-10-29T01:00:00.000Z",
+            "badges": {
+                "main": "GDJCU42KMWM4UCM4UZ3PNL3SDEH7LC6TTQTMXGKXZHSO2DHWBBYIGIVF"
+            }
+        },
+        {
+            "date": "2021-11-01T13:00:00.000Z",
+            "badges": {
+                "main": "GBZMBLMCJEDIIM5IMWMFNHK35YXNXLUF3HLL2IYMFP7WRGDU5Y6OZVQQ"
+            }
+        },
+        {
+            "date": "2021-11-05T01:00:00.000Z",
+            "badges": {
+                "main": "GB5TXD7KKU7R4Z3ZJQBWRAA3DN3CWP6RAXU75SCIGA2HYJLW5FJZ234N"
+            }
+        },
+        {
+            "date": "2021-11-08T14:00:00.000Z",
+            "badges": {
+                "main": "GCFAFBICWS5U4YK6NHJKOAHWX3VGCHQWKS2XMTK6NQCX2YCLUFPODADN"
+            }
+        },
+        {
+            "date": "2021-11-12T00:00:00.000Z",
+            "badges": {
+                "main": "GBP7IEA2U4QQUTP67ML56YNUC4RY34DKYPFOAAAYYZSJJY3YA55NCUBS"
+            }
+        }
+    ]
+}
