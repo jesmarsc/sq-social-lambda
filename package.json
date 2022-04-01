@@ -1,6 +1,5 @@
 {
-  "name": "lambda-service",
-  "version": "1.0.0",
+  "private": true,
   "main": "handler.js",
   "devDependencies": {
     "@babel/core": "^7.14.6",
@@ -23,10 +22,5 @@
     "start": "serverless offline --useChildProcesses",
     "build": "serverless package",
     "deploy": "serverless deploy"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": "",
-  "dependencies": {}
+  }
 }
